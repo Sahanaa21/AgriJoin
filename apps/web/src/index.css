@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-brand-bg text-brand-text antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  /* Leaflet marker images are loaded from CSS; ensure the container has size. */
+  .leaflet-container {
+    @apply rounded-2xl;
+    font: inherit;
+  }
+}
+
+@layer components {
+  .aj-input {
+    @apply w-full rounded-xl border border-brand-border bg-white px-4 py-2.5 text-brand-text
+      placeholder:text-brand-muted/70 focus:border-brand-green focus:outline-none
+      focus:ring-2 focus:ring-brand-green/30 disabled:bg-brand-light/50;
+  }
+  .aj-label {
+    @apply mb-1.5 block text-sm font-medium text-brand-text;
+  }
+  .aj-error {
+    @apply mt-1 text-sm text-red-600;
+  }
+  .aj-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold
+      transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed
+      disabled:opacity-60;
+  }
+  .aj-btn-primary {
+    @apply aj-btn bg-brand-green text-white hover:bg-brand-deep focus:ring-brand-green/40;
+  }
+  .aj-btn-accent {
+    @apply aj-btn bg-brand-accent text-white hover:bg-[#cf6124] focus:ring-brand-accent/40;
+  }
+  .aj-btn-ghost {
+    @apply aj-btn border border-brand-border bg-white text-brand-text hover:bg-brand-light focus:ring-brand-green/30;
+  }
+  .aj-card {
+    @apply rounded-2xl border border-brand-border bg-white shadow-card;
+  }
+  .aj-chip {
+    @apply inline-flex cursor-pointer select-none items-center rounded-full border px-3 py-1.5 text-sm
+      transition-colors;
+  }
+  .aj-chip-on {
+    @apply border-brand-green bg-brand-green text-white;
+  }
+  .aj-chip-off {
+    @apply border-brand-border bg-white text-brand-text hover:border-brand-green/60;
+  }
+  .aj-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+}

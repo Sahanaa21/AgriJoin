@@ -1,0 +1,30 @@
+{
+  "name": "agrijoin",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AgriJoin — agricultural labour marketplace connecting farmers and labourers.",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "apps/web",
+    "apps/api",
+    "apps/mobile"
+  ],
+  "scripts": {
+    "build:shared": "npm run build --workspace @agrijoin/shared",
+    "dev:web": "npm run dev --workspace @agrijoin/web",
+    "dev:api": "npm run dev --workspace @agrijoin/api",
+    "dev:mobile": "npm run start --workspace @agrijoin/mobile",
+    "build:web": "npm run build --workspace @agrijoin/web",
+    "build:api": "npm run build --workspace @agrijoin/api",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

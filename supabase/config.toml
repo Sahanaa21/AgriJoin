@@ -1,0 +1,6 @@
+# Supabase CLI config. Link with:  supabase link --project-ref ecyugokcecwhwtiqxfnl
+# The project ref is the subdomain of your Supabase URL (public, not a secret).
+project_id = "ecyugokcecwhwtiqxfnl"
+
+[db]
+major_version = 15
